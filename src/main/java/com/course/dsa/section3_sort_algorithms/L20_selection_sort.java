@@ -1,23 +1,25 @@
 package com.course.dsa.section3_sort_algorithms;
 
-import static com.course.dsa.Utils.arrayWithRandomIntValues;
+import com.course.dsa.Utils;
 
-public class L18_bubble_sort {
+public class L20_selection_sort {
 
     public static void main(String[] args) {
 
-        int[] intArray = arrayWithRandomIntValues(100);
+        int[] intArray = Utils.arrayWithRandomIntValues(100000);
 
-        bubbleSort(intArray);
+        selectionSort(intArray);
     }
 
-    private static void bubbleSort(int[] intArray) {
+    private static void selectionSort(int[] intArray) {
         for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            for (int i = 0; i < lastUnsortedIndex; i++) {
-                if (intArray[i] > intArray[i + 1]) {
-                    swap(intArray, i, i + 1);
+            int largest = 0;
+            for (int i = 1; i <= lastUnsortedIndex; i++) {
+                if (intArray[i] > intArray[largest]) {
+                    largest = i;
                 }
             }
+            swap(intArray, largest, lastUnsortedIndex);
         }
     }
 
