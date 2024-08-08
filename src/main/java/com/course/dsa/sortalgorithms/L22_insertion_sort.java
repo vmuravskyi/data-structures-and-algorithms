@@ -1,9 +1,7 @@
-package com.course.dsa.section3_sort_algorithms;
+package com.course.dsa.sort_algorithms;
 
-import com.course.dsa.Utils;
-
-import static com.course.dsa.Utils.printTime;
-import static com.course.dsa.Utils.timeMillis;
+import static com.course.dsa.sort_algorithms.Utils.printTime;
+import static com.course.dsa.sort_algorithms.Utils.timeMillis;
 
 public class L22_insertion_sort {
 

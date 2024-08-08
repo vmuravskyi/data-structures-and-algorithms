@@ -1,6 +1,6 @@
-package com.course.dsa.section3_sort_algorithms;
+package com.course.dsa.sort_algorithms;
 
-import static com.course.dsa.Utils.arrayWithRandomIntValues;
+import static com.course.dsa.sort_algorithms.Utils.arrayWithRandomIntValues;
 
 public class L18_bubble_sort {
 

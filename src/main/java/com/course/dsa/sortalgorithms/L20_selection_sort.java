@@ -1,6 +1,4 @@
-package com.course.dsa.section3_sort_algorithms;
-
-import com.course.dsa.Utils;
+package com.course.dsa.sort_algorithms;
 
 public class L20_selection_sort {
 
