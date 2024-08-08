@@ -1,13 +1,15 @@
-package com.course.dsa.section2_big_O.l10_O_of_1;
+package com.course.dsa.section2_big_O.l11_O_of_n;
 
 public class Main {
 
     public static void main(String[] args) {
-        addItems(10);
+        printItems(10);
     }
 
-    public static int addItems(int n) {
-        return n + n + n;
+    public static void printItems(int n) {
+        for (int i = 1; i < n; i *= 2) {  // Exponential growth: i = 1, 2, 4, 8, ..., < n
+            System.out.println("i: " + i);
+        }
     }
 
 }

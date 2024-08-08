@@ -1,4 +1,4 @@
-package com.course.dsa.sort_algorithms;
+package com.course.dsa.sortalgorithms;
 
 public class L26_recursion {
 

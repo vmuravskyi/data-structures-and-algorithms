@@ -1,17 +1,13 @@
-package com.course.dsa.section2_big_O.l8_O_of_n2;
+package com.course.dsa.section2_big_O.l10_O_of_1;
 
 public class Main {
 
     public static void main(String[] args) {
-        printItems(10);
+        addItems(10);
     }
 
-    public static void printItems(int n) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.println(i + " " + j);
-            }
-        }
+    public static int addItems(int n) {
+        return n + n + n;
     }
 
 }
