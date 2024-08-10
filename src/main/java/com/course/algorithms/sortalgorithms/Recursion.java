@@ -1,6 +1,6 @@
-package com.course.dsa.sortalgorithms;
+package com.course.algorithms.sortalgorithms;
 
-public class L26_recursion {
+public class Recursion {
 
     public static void main(String[] args) {
 

@@ -1,8 +1,8 @@
-package com.course.dsa.sortalgorithms;
+package com.course.algorithms.sortalgorithms;
 
-import static com.course.dsa.sortalgorithms.Utils.arrayWithRandomIntValues;
+import static com.course.algorithms.sortalgorithms.Utils.arrayWithRandomIntValues;
 
-public class L18_bubble_sort {
+public class BubbleSort {
 
     public static void main(String[] args) {
 

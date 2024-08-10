@@ -1,4 +1,4 @@
-package com.course.dsa.section2_big_O.l8_O_of_n2;
+package com.course.algorithms.bigO.l6_O_of_n;
 
 public class Main {
 
@@ -8,9 +8,7 @@ public class Main {
 
     public static void printItems(int n) {
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.println(i + " " + j);
-            }
+            System.out.println(i);
         }
     }
 

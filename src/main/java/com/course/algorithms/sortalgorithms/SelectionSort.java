@@ -1,6 +1,6 @@
-package com.course.dsa.sortalgorithms;
+package com.course.algorithms.sortalgorithms;
 
-public class L20_selection_sort {
+public class SelectionSort {
 
     public static void main(String[] args) {
 

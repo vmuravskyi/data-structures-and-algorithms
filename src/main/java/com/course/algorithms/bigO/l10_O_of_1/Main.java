@@ -1,4 +1,4 @@
-package com.course.dsa.section2_big_O.l10_O_of_1;
+package com.course.algorithms.bigO.l10_O_of_1;
 
 public class Main {
 

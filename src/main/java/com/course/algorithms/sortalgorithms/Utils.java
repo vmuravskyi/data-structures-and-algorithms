@@ -1,4 +1,4 @@
-package com.course.dsa.sortalgorithms;
+package com.course.algorithms.sortalgorithms;
 
 import java.util.Random;
 

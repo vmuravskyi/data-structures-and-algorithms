@@ -1,16 +1,16 @@
-package com.course.dsa.section4_linked_list;
+package com.course.datastructures.doublylinkedlist;
 
-public class LinkedList {
+public class DoubleLinkedList {
 
     private Node head;
     private Node tail;
     private int length;
 
-    public LinkedList(int value) {
-        Node node = new Node(value);
-        head = node;
-        tail = node;
-        length = 1;
+    public DoubleLinkedList(int value) {
+        Node newNode = new Node(value);
+        this.head = newNode;
+        this.tail = newNode;
+        this.length = 1;
     }
 
     public void append(int value) {
@@ -20,6 +20,7 @@ public class LinkedList {
             tail = newNode;
         } else {
             tail.next = newNode;
+            newNode.prev = tail;
             tail = newNode;
         }
         length++;
@@ -30,9 +31,11 @@ public class LinkedList {
         if (length == 0) {
             head = newNode;
             tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
         }
-        newNode.next = head;
-        head = newNode;
         length++;
     }
 
@@ -41,12 +44,15 @@ public class LinkedList {
             return null;
         }
         Node temp = head;
-        head = head.next;
-        temp.next = null;
-        length--;
-        if (length == 0) {
+        if (length == 1) {
+            head = null;
             tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+            temp.next = null;
         }
+        length--;
         return temp;
     }
 
@@ -56,21 +62,15 @@ public class LinkedList {
         }
 
         Node temp = head;
-        Node pre = head;
-        while (temp.next != null) {
-            pre = temp;
-            temp = temp.next;
-        }
-
-        tail = pre;
-        tail.next = null;
-        length--;
-
-        if (length == 0) {
+        if (length == 1) {
             head = null;
             tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            temp.prev = null;
         }
-
+        length--;
         return temp;
     }
 
@@ -79,19 +79,26 @@ public class LinkedList {
             return null;
         }
         Node temp = head;
-        for (int i = 0; i < index; i++) {
-            temp = temp.next;
+        if (index < length / 2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = tail;
+            for (int i = length - 1; i > index; i--) {
+                temp = temp.prev;
+            }
         }
         return temp;
     }
 
     public boolean set(int index, int value) {
         Node temp = get(index);
-        if (temp == null) {
-            return false;
+        if (temp != null) {
+            temp.value = value;
+            return true;
         }
-        temp.value = value;
-        return true;
+        return false;
     }
 
     public boolean insert(int index, int value) {
@@ -107,45 +114,14 @@ public class LinkedList {
             return true;
         }
         Node newNode = new Node(value);
-        Node temp = get(index - 1);
-        newNode.next = temp.next;
-        temp.next = newNode;
+        Node before = get(index - 1);
+        Node after = before.next;
+        newNode.prev = before;
+        newNode.next = after;
+        before.next = newNode;
+        after.prev = newNode;
         length++;
         return true;
-    }
-
-    public Node remove(int index) {
-        if (index < 0 || index >= length) {
-            return null;
-        }
-        if (index == 0) {
-            return removeFirst();
-        }
-        if (index == length - 1) {
-            return removeLast();
-        }
-
-        Node prev = get(index - 1);
-        Node temp = prev.next;
-
-        prev.next = temp.next;
-        temp.next = null;
-        length--;
-        return temp;
-    }
-
-    public void reverse() {
-        Node temp = head;
-        head = tail;
-        tail = temp;
-        Node after = temp.next;
-        Node before = null;
-        for (int i = 0; i < length; i++) {
-            after = temp.next;
-            temp.next = before;
-            before = temp;
-            temp = after;
-        }
     }
 
     public void printList() {
@@ -169,11 +145,16 @@ public class LinkedList {
     }
 
     class Node {
-        int value;
-        Node next;
+        private int value;
+        private Node next;
+        private Node prev;
 
-        Node(int value) {
+        public Node(int value) {
             this.value = value;
+        }
+
+        public int getValue() {
+            return value;
         }
     }
 

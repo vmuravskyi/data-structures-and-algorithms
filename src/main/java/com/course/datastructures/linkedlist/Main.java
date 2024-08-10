@@ -1,4 +1,4 @@
-package com.course.dsa.section4_linked_list;
+package com.course.datastructures.linkedlist;
 
 public class Main {
 

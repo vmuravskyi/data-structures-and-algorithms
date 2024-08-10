@@ -1,9 +1,9 @@
-package com.course.dsa.sortalgorithms;
+package com.course.algorithms.sortalgorithms;
 
-import static com.course.dsa.sortalgorithms.Utils.printTime;
-import static com.course.dsa.sortalgorithms.Utils.timeMillis;
+import static com.course.algorithms.sortalgorithms.Utils.printTime;
+import static com.course.algorithms.sortalgorithms.Utils.timeMillis;
 
-public class L22_insertion_sort {
+public class InsertionSort {
 
     public static void main(String[] args) {
 
