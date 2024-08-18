@@ -13,7 +13,7 @@ public class Main {
         System.out.println();
 
         ddl.removeFirst();
-        ddl.removeFirst();
+        ddl.remove(2);
 
         ddl.printList();
 
