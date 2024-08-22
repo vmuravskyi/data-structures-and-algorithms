@@ -26,6 +26,9 @@ public class Main {
         bst.insert(27);
 
         System.out.println(bst.root.left.right.value);
+
+        System.out.println("Contains 27: " + bst.contains(27));
+        System.out.println("Contains 17: " + bst.contains(17));
     }
 
 }
