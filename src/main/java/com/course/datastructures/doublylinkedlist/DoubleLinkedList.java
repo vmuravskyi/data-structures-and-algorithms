@@ -83,7 +83,7 @@ public class DoubleLinkedList {
             return null;
         }
 
-        Node temp = head;
+        Node temp = tail;
         if (length == 1) {
             head = null;
             tail = null;
