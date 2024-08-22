@@ -35,6 +35,10 @@ public class BinarySearchTree {
         }
     }
 
+    public boolean contains() {
+
+    }
+
     class Node {
         int value;
         Node left;
