@@ -15,6 +15,19 @@ public class Graph {
         return false;
     }
 
+    public boolean removeVertex(String vertex) {
+        ArrayList<String> edges = adjacencyList.get(vertex);
+        if (edges == null) {
+            return false;
+        }
+
+        for (String edge : edges) {
+            adjacencyList.get(edge).remove(vertex);
+        }
+        adjacencyList.remove(vertex);
+        return true;
+    }
+
     public boolean addEdge(String vertex1, String vertex2) {
         if (adjacencyList.get(vertex1) != null && adjacencyList.get(vertex2) != null) {
             adjacencyList.get(vertex1).add(vertex2);
