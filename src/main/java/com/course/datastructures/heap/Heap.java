@@ -37,7 +37,7 @@ public class Heap {
         heap.add(value);
         int current = heap.size() - 1;
 
-        while (current > 0 && heap.get(current) > heap.get(parent(current))) {
+        while (current > 0 && heap.get(current) < heap.get(parent(current))) {
             swap(current, parent(current));
             current = parent(current);
         }
@@ -59,22 +59,22 @@ public class Heap {
     }
 
     private void sinkDown(int index) {
-        int maxIndex = index;
+        int minIndex = index;
         while (true) {
             int leftIndex = leftChild(index);
             int rightIndex = rightChild(index);
 
-            if (leftIndex < heap.size() && heap.get(leftIndex) > heap.get(maxIndex)) {
-                maxIndex = leftIndex;
+            if (leftIndex < heap.size() && heap.get(leftIndex) < heap.get(minIndex)) {
+                minIndex = leftIndex;
             }
 
-            if (rightIndex < heap.size() && heap.get(rightIndex) > heap.get(maxIndex)) {
-                maxIndex = rightIndex;
+            if (rightIndex < heap.size() && heap.get(rightIndex) < heap.get(minIndex)) {
+                minIndex = rightIndex;
             }
 
-            if (maxIndex != index) {
-                swap(index, maxIndex);
-                index = maxIndex;
+            if (minIndex != index) {
+                swap(index, minIndex);
+                index = minIndex;
             } else {
                 return;
             }
