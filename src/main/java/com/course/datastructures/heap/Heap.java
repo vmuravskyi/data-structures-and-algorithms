@@ -12,7 +12,7 @@ public class Heap {
     }
 
     public List<Integer> getHeap() {
-        return new ArrayList<Integer>(heap);
+        return new ArrayList<>(heap);
     }
 
     private int leftChild(int index) {
