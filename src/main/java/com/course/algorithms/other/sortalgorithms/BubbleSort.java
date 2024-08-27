@@ -1,6 +1,6 @@
-package com.course.algorithms.sortalgorithms;
+package com.course.algorithms.other.sortalgorithms;
 
-import static com.course.algorithms.sortalgorithms.Utils.arrayWithRandomIntValues;
+import static com.course.algorithms.other.sortalgorithms.Utils.arrayWithRandomIntValues;
 
 public class BubbleSort {
 

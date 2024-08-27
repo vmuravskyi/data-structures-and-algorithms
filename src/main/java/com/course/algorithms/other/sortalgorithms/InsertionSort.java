@@ -1,7 +1,7 @@
-package com.course.algorithms.sortalgorithms;
+package com.course.algorithms.other.sortalgorithms;
 
-import static com.course.algorithms.sortalgorithms.Utils.printTime;
-import static com.course.algorithms.sortalgorithms.Utils.timeMillis;
+import static com.course.algorithms.other.sortalgorithms.Utils.printTime;
+import static com.course.algorithms.other.sortalgorithms.Utils.timeMillis;
 
 public class InsertionSort {
 
