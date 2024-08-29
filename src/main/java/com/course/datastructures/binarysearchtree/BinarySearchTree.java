@@ -91,7 +91,7 @@ public class BinarySearchTree {
     }
 
     public void deleteNode(int value) {
-
+        deleteNode(root, value);
     }
 
     private Node deleteNode(Node currentNode, int value) {
@@ -111,11 +111,20 @@ public class BinarySearchTree {
             } else if (currentNode.right == null) {
                 currentNode = currentNode.left;
             } else {
-
+                int subTreeMin = minValue(currentNode.right);
+                currentNode.value = subTreeMin;
+                currentNode.right = deleteNode(currentNode.right, subTreeMin);
             }
         }
 
         return currentNode;
+    }
+
+    public int minValue(Node currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode.value;
     }
 
     class Node {

@@ -10,6 +10,8 @@ public class MainRecursiveTree {
         bst.rInsert(1);
         bst.rInsert(3);
 
+        bst.deleteNode(2);
+
         /*
             THE LINES ABOVE CREATE THIS TREE:
                         2
@@ -19,7 +21,7 @@ public class MainRecursiveTree {
 
         System.out.println("Root: " + bst.root.value);
         System.out.println("Root->Left: " + bst.root.left.value);
-        System.out.println("Root->Right: " + bst.root.right.value);
+        System.out.println("Root->Right: " + bst.root.right);
 
     }
 
