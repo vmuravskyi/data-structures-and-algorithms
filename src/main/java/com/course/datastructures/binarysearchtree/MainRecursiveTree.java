@@ -4,6 +4,43 @@ public class MainRecursiveTree {
 
     public static void main(String[] args) {
 
+        testingDFS();
+
+    }
+
+    public static void testingDFS() {
+
+        BinarySearchTree bst = new BinarySearchTree();
+
+        bst.insert(47);
+        bst.insert(21);
+        bst.insert(76);
+        bst.insert(18);
+        bst.insert(27);
+        bst.insert(52);
+        bst.insert(82);
+
+        System.out.println(bst.DFSPreOrder());
+
+    }
+
+    public static void testingBFS() {
+
+        BinarySearchTree bst = new BinarySearchTree();
+
+        bst.insert(47);
+        bst.insert(21);
+        bst.insert(76);
+        bst.insert(18);
+        bst.insert(27);
+        bst.insert(52);
+        bst.insert(82);
+
+        System.out.println(bst.BFS());
+
+    }
+
+    public static void testingRecursive() {
         BinarySearchTree bst = new BinarySearchTree();
 
         bst.rInsert(2);
@@ -22,7 +59,6 @@ public class MainRecursiveTree {
         System.out.println("Root: " + bst.root.value);
         System.out.println("Root->Left: " + bst.root.left.value);
         System.out.println("Root->Right: " + bst.root.right);
-
     }
 
 }

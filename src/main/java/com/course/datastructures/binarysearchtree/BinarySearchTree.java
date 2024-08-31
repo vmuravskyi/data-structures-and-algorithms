@@ -131,6 +131,11 @@ public class BinarySearchTree {
         return currentNode.value;
     }
 
+    /**
+     * https://en.wikipedia.org/wiki/Breadth-first_search.
+     *
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> BFS() {
         Node currentNode = root;
         Queue<Node> queue = new LinkedList<>();
@@ -147,6 +152,25 @@ public class BinarySearchTree {
                 queue.add(currentNode.right);
             }
         }
+
+        return results;
+    }
+
+    public ArrayList<Integer> DFSPreOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currentNode) {
+                results.add(currentNode.value);
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
 
         return results;
     }
