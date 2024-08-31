@@ -4,11 +4,27 @@ public class MainRecursiveTree {
 
     public static void main(String[] args) {
 
-        testingDFS();
+        testingDFSPostOrder();
 
     }
 
-    public static void testingDFS() {
+    public static void testingDFSPostOrder() {
+
+        BinarySearchTree bst = new BinarySearchTree();
+
+        bst.insert(47);
+        bst.insert(21);
+        bst.insert(76);
+        bst.insert(18);
+        bst.insert(27);
+        bst.insert(52);
+        bst.insert(82);
+
+        System.out.println(bst.DFSPostOrder());
+
+    }
+
+    public static void testingDFSPreOrder() {
 
         BinarySearchTree bst = new BinarySearchTree();
 
