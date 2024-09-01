@@ -1,4 +1,4 @@
-package com.course.algorithms.other.sortalgorithms;
+package com.course.algorithms.other;
 
 public class SelectionSort {
 
